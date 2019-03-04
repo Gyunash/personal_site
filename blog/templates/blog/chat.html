@@ -1,0 +1,9 @@
+<div class="layer" id="neww">
+    {% for messages in chat_messages %}
+    <blockquote class="blockquote">
+        <p class="mb-0"><small>{{ messages.message }}</small></p>
+        <footer class="blockquote-footer"><small><cite title="Source Title">{{ messages.user|capfirst }}  {{ messages.timestamp }}</cite></small>
+        </footer>
+    </blockquote>
+    {% endfor %}
+</div>

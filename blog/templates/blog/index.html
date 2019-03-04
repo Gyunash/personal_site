@@ -1,0 +1,36 @@
+<!-- наследуем от текущего шаблона -->
+{% extends 'blog/base_blog.html' %}
+
+
+{% block title %}
+    Any content
+{% endblock %}
+
+
+{% block content %}
+
+    <h1 class="mb-4">Posts:</h1>
+
+
+    <!-- создаем цикл, который выводит заголовки статей -->
+    {% for post in page.object_list %}
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <!-- из таблицы вывод поля с датой -->
+                {{ post.date_pub }}
+            </div>
+
+            <div class="card-body">
+                <!-- из таблицы вывод заголовка статьи -->
+                <h5 class="card-title">{{ post.title }}</h5>
+                <!-- обрезка слов и вывод части содержания поста-->
+                <p class="card-text">{{ post.body|truncatewords:15 }}</p>
+                <a href="{% url 'post_detail_url' id=post.id slug=post.slug %}" class="btn" style="background-color: #6eb87d; color:whitesmoke;">Read more..</a>
+            </div>
+        </div>
+
+    {% endfor %}
+
+
+{% endblock %}

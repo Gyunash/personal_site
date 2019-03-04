@@ -1,0 +1,25 @@
+{% extends "blog/base_blog.html" %}
+
+{% block title %}
+    {{ post.title }} - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <div>
+        <h1 class="mt-5">{{ post.title }}</h1>
+    </div>
+
+    <div>
+        <p>{{ post.body }}</p>
+    </div>
+
+
+    <div class="main-comment-section">
+        {% include 'blog/comments.html' %}
+    </div>
+
+{% endblock %}
+
+
+
+

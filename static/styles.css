@@ -1,0 +1,267 @@
+.admin-panel{
+    border: 1px solid #999;
+    border-radius: 2px;
+    position: fixed;
+    right: 50px;
+    bottom: 30px;
+    opacity: 0.3;
+    padding: 15px;
+}
+
+.admin-panel:hover{
+    opacity: 1;
+}
+
+.admin-panel a{
+    display: block;
+    margin: 5px 0;
+}
+
+a.edit, a.delete{
+    display: none;
+}
+
+.chats{
+    border: 1px solid #999;
+}
+
+.regButton {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 6px 24px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.logButton{
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 6px 24px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.regbottom:hover {
+    background: #ccc;
+}
+
+#windowSignup {
+    width: 350px;
+    height: 380px;
+    margin: 40px auto;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    z-index: 150;
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#windowSignup:target {
+    display: block;
+/* анимация и время задержки */
+    -webkit-animation: fade .6s;
+    -moz-animation: fade .6s;
+    animation: fade .6s;
+}
+
+#windowLogin {
+    width: 350px;
+    height: 285px;
+    margin: 40px auto;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    z-index: 150;
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#windowLogin:target {
+    display: block;
+/* анимация и время задержки */
+    -webkit-animation: fade .6s;
+    -moz-animation: fade .6s;
+    animation: fade .6s;
+}
+
+.form {
+    width: 275px;
+    margin: 0px auto 20px auto;
+    text-align: center;
+}
+
+.input {
+    transition: all 0.4s;
+    width: 260px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.radio {
+    margin-bottom: 10px;
+}
+
+.close {
+    margin: 10px 0 0 320px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    padding: 2px;
+    background: #ccc;
+}
+
+.close:hover {
+    background: #fff;
+}
+
+#gray {
+    background-color: rgba(1, 1, 1, 0.75);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+    z-index: 100;
+    overflow: auto;
+    opacity: 0.8;
+    padding: 15px;
+}
+
+.footer{
+    height: 80px;
+    padding: 15px;
+    background-color: #dfdff3;
+    text-align: center;
+    flex: 0 0 auto;
+}
+
+#email.input:invalid{
+    background: #fdd;
+}
+#email.input:valid {
+    background: #dfd;
+}
+
+#email_login.input:invalid {
+    background: #fdd;
+}
+#email_login.input:invalid {
+    background: #dfd;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.content {
+    flex: 1 0 auto;
+}
+
+#chat{
+    margin-right: 10px;
+}
+
+#room{
+    margin-right: 20px;
+}
+
+.layer {
+    overflow: scroll; /* полосы прокрутки */
+    width: 450px; /* Ширина блока */
+    height: 250px; /* Высота блока */
+    padding: 5px; /* Поля вокруг текста */
+    border: solid 1px black; /* Параметры рамки */
+    background-color: white;
+} 
+
+.layer_chat {
+    overflow: scroll;
+    width: 450px;
+    height: 250px;
+    padding: 5px;
+    border: solid 1px black;
+} 
+
+
+.layer1 {
+    overflow: scroll;
+    width: 250px;
+    height: 385px;
+    padding: 5px;
+    border: solid 1px grey;
+    background-color: white;
+} 
+
+
+body {
+    background: white url("images/background.jpg") no-repeat;
+    height: 100%;
+}
+
+#logout{
+    margin-left:10px;
+}
+
+#authen{
+    margin:10px;
+}
+
+/* #windowRoom {
+    width: 350px;
+    height: 285px;
+    margin: 40px auto;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    z-index: 150;
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#windowRoom:target {
+    display: block;
+    -webkit-animation: fade .6s;
+    -moz-animation: fade .6s;
+    animation: fade .6s;
+} */
+
+.windowRoom {
+    width: 600px;
+    height: 500px;
+    margin: 40px auto;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    z-index: 150;
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}

@@ -1,0 +1,158 @@
+{% extends "blog/base_blog.html" %}
+
+
+{% block content %}
+
+    <p>USERS</p>
+    
+        
+    <div class="layer1" id="new1">
+        <div id="wrapper" class="tab1">
+            <div class="tab1">
+
+                {% for users in users_list %}
+
+                    <blockquote class="blockquote">
+                        <p class="mb-0"><small>{{ users.username }}</small></p>
+                        <input type="hidden" class="sd" name="u_id" value="{{ users.id }}">
+                        <input type="hidden" class="user_auth" name="user_auth" value="{{ user.id }}">
+                        <button method="post" type="button" name="button" class="btnq btn-info" id="comment_app" value='{{ users.id }}'>Написать</button>
+                    </blockquote>
+
+                {% endfor %}
+
+            </div>
+        </div>​
+    </div>
+                
+    
+    
+    
+    <div class="chatq container mt-2" style="display:none;">  
+        <div class="windowRoom"> 
+            <div class="chat-comments container mt-2">
+
+                <p>Room</p>
+            
+                <div class="main-chat-section">
+                    <div class="layer_chat" id="neww">
+
+                        <div class="inner"></div>
+                    
+                    </div>
+                </div>
+                
+                <br>
+
+
+                <div class="form-group row">
+                    <form method="post" class="room-form" action=".">
+                        {% csrf_token %}
+                        <input type="hidden" name="user_id" value="{{ com.id }}">
+                        <!-- {{ room_form.as_p }} -->
+                        <input type="text" placeholder="Введите сообщение.." class="msg_field" value="" required/>
+
+
+                        {% if request.user.is_authenticated %}
+                            <input type="submit" value="Submit" class="btn_mess btn-outline-success">
+                        {% else %}
+                            <input type="submit" value="Submit" class="btn_mess btn-outline-success" disabled>
+                        {% endif %}
+                    </form>
+                </div>
+
+
+            </div>
+        </div>   
+    </div>
+
+
+
+
+         
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+            <!-- <div>
+                {{ chat_messages.count }} message {{ chat_messages|pluralize }}
+            </div>  
+
+            
+                
+            <div class="layer" id="neww">
+                {% for messages in chat_messages %}
+                <blockquote class="blockquote">
+                    <p class="mb-0"><small>{{ messages.message }}</small></p>
+                    <footer class="blockquote-footer"><small><cite title="Source Title">{{ messages.user|capfirst }}  {{ messages.timestamp }}</cite></small>
+                    </footer>
+                </blockquote>
+                {% endfor %}
+            </div>
+
+
+
+            <div class="container-fluid mt-2">
+                <div class="form-group row">
+                    <form method="post" class="chat-form" action=".">
+                        {% csrf_token %}
+                        {{ chat_form.as_p }}
+            
+                        {% if request.user.is_authenticated %}
+                            <input type="submit" value="Submit" class="btn btn-outline-success">
+                        {% else %}
+                            <input type="submit" value="Submit" class="btn btn-outline-success" disabled>
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br>
+
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "blog/base_blog.html" %}
+
+
+{% block content %}
+    <div> 
+        <h2>Chat</h2>
+        {{ chat_messages.count }} message {{ chat_messages|pluralize }}
+    </div>  
+    
+
+
+    <div class="main-chat-section">
+        {% include 'blog/chat.html' %}
+    </div>
+    
+
+    
+    <div id="comment_id"></div>
+    <div class="container-fluid mt-2">
+        <div class="form-group row">
+            <form method="post" class="chat-form" action=".">
+                {% csrf_token %}
+                {{ chat_form.as_p }}
+    
+                {% if request.user.is_authenticated %}
+                    <input type="submit" value="Submit" class="btn btn-outline-success">
+                {% else %}
+                    <input type="submit" value="Submit" class="btn btn-outline-success" disabled>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}
